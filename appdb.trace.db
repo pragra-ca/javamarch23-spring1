@@ -1,0 +1,25 @@
+2023-07-15 13:56:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "GUEST" not found; SQL statement:
+INSERT INTO GUEST VALUES( ?, ?, ?, ?, ? ) [42102-214]
+2023-07-15 13:58:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "converting to class com.example.guestbook.domain.Address" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.value.ValueToObjectConverter.valueToOther(ValueToObjectConverter.java:385)
+	at org.h2.value.ValueToObjectConverter.valueToObject(ValueToObjectConverter.java:339)
+	at org.h2.jdbc.JdbcResultSet.getObject(JdbcResultSet.java:4196)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getObject(HikariProxyResultSet.java)
+	at org.springframework.jdbc.support.JdbcUtils.getResultSetValue(JdbcUtils.java:229)
+	at org.springframework.jdbc.core.BeanPropertyRowMapper.getColumnValue(BeanPropertyRowMapper.java:420)
+	at org.springframework.jdbc.core.BeanPropertyRowMapper.mapRow(BeanPropertyRowMapper.java:337)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:453)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475)
+	at com.example.guestbook.service.GuestService.getGuest(GuestService.java:47)
+	at com.example.guestbook.GuestbookApplication.main(GuestbookApplication.java:29)
